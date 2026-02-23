@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Collection Disclosure - Christ Connects</title>
+    <style>
+        :root {
+            --primary: #BE3FC9;
+            --primary-dark: #9B2FC9;
+            --secondary: #7B2CBF;
+            --accent: #E0Aaff;
+            --background: #0a0a0a;
+            --surface: #141414;
+            --surface-light: #1f1f1f;
+            --text: #f5f5f5;
+            --text-muted: #a0a0a0;
+            --border: #2a2a2a;
+            --gradient: linear-gradient(135deg, #BE3FC9 0%, #7B2CBF 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.8;
+        }
+
+        .header {
+            background: var(--gradient);
+            padding: 60px 24px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to top, var(--background), transparent);
+        }
+
+        .back-link {
+            position: absolute;
+            top: 24px;
+            left: 24px;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+
+        .back-link:hover {
+            opacity: 1;
+        }
+
+        .back-link svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        .header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header .last-updated {
+            margin-top: 16px;
+            opacity: 0.85;
+            position: relative;
+            z-index: 1;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 24px 80px;
+        }
+
+        section {
+            margin-bottom: 48px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        h2::before {
+            content: '';
+            width: 4px;
+            height: 24px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.15rem;
+            margin: 24px 0 12px;
+            color: var(--text);
+        }
+
+        p {
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        ul, ol {
+            margin: 16px 0;
+            padding-left: 24px;
+            color: var(--text-muted);
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .highlight-box {
+            background: var(--surface);
+            border-left: 4px solid var(--primary);
+            padding: 20px 24px;
+            margin: 24px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .info-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 24px 0;
+        }
+
+        .info-card h3 {
+            margin-top: 0;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-card ul {
+            margin-bottom: 0;
+        }
+
+        .compliance-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin: 24px 0;
+        }
+
+        .compliance-badge {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .compliance-badge .icon {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+
+        .compliance-badge strong {
+            color: var(--primary);
+        }
+
+        .contact-section {
+            background: var(--surface-light);
+            border-radius: 12px;
+            padding: 32px;
+            text-align: center;
+            margin-top: 48px;
+        }
+
+        .contact-section h3 {
+            color: var(--primary);
+            margin-top: 0;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="index.html" class="back-link">
+            <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+            Back to Legal Docs
+        </a>
+        <h1>Data Collection Disclosure</h1>
+        <p class="last-updated">Last Updated: December 2025</p>
+    </div>
+
+    <div class="container">
+        <section>
+            <p>This document provides a comprehensive overview of all data collection practices in Christ Connects, ensuring transparency and compliance with privacy regulations.</p>
+        </section>
+
+        <section>
+            <h2>1. Data Collection Categories</h2>
+
+            <div class="info-card">
+                <h3>1.1 Account Data</h3>
+                <p><strong>What we collect:</strong></p>
+                <ul>
+                    <li>Full name and username</li>
+                    <li>Email address</li>
+                    <li>Profile picture and bio</li>
+                    <li>Account creation date</li>
+                    <li>User preferences and settings</li>
+                </ul>
+                <p><strong>Purpose:</strong> Account creation and authentication, profile display and personalization, communication and support.</p>
+                <p><strong>Legal Basis:</strong> Contract performance (account services), User consent (optional profile data).</p>
+            </div>
+
+            <div class="info-card">
+                <h3>1.2 User-Generated Content</h3>
+                <p><strong>What we collect:</strong></p>
+                <ul>
+                    <li>Text posts, comments, and messages</li>
+                    <li>Uploaded photos and videos</li>
+                    <li>Event descriptions and details</li>
+                    <li>Group discussions and forum posts</li>
+                </ul>
+                <p><strong>Purpose:</strong> Content sharing and community interaction, moderation and safety monitoring, feature functionality.</p>
+                <p><strong>Legal Basis:</strong> Contract performance (app functionality), Legitimate interest (community features).</p>
+            </div>
+
+            <div class="info-card">
+                <h3>1.3 Device and Technical Data</h3>
+                <p><strong>What we collect:</strong></p>
+                <ul>
+                    <li>Device type and model</li>
+                    <li>Operating system version</li>
+                    <li>App version and build number</li>
+                    <li>Device language and region</li>
+                    <li>Unique device identifiers</li>
+                    <li>IP address and network information</li>
+                </ul>
+                <p><strong>Purpose:</strong> App functionality and compatibility, troubleshooting and support, security and fraud prevention, analytics and performance monitoring.</p>
+                <p><strong>Legal Basis:</strong> Legitimate interest (app functionality and security), Contract performance (service delivery).</p>
+            </div>
+
+            <div class="info-card">
+                <h3>1.4 Usage and Analytics Data</h3>
+                <p><strong>What we collect:</strong></p>
+                <ul>
+                    <li>App usage patterns and frequency</li>
+                    <li>Feature usage statistics</li>
+                    <li>Session duration and navigation paths</li>
+                    <li>Error logs and crash reports</li>
+                    <li>Performance metrics</li>
+                </ul>
+                <p><strong>Purpose:</strong> App improvement and optimization, bug fixing and troubleshooting, feature development planning, user experience enhancement.</p>
+                <p><strong>Legal Basis:</strong> Legitimate interest (service improvement), User consent (analytics tracking).</p>
+            </div>
+
+            <div class="info-card">
+                <h3>1.5 Location Data (Optional)</h3>
+                <p><strong>What we collect:</strong></p>
+                <ul>
+                    <li>Approximate location (with permission)</li>
+                    <li>Event location preferences</li>
+                    <li>Church location information</li>
+                </ul>
+                <p><strong>Purpose:</strong> Event discovery and recommendations, local community connections, location-based features.</p>
+                <p><strong>Legal Basis:</strong> User consent (explicit permission required), Contract performance (location-based features).</p>
+            </div>
+
+            <div class="info-card">
+                <h3>1.6 Communication Data</h3>
+                <p><strong>What we collect:</strong></p>
+                <ul>
+                    <li>Push notification tokens</li>
+                    <li>Message delivery status</li>
+                    <li>Communication preferences</li>
+                    <li>Support request content</li>
+                </ul>
+                <p><strong>Purpose:</strong> Push notification delivery, message functionality, customer support, service communication.</p>
+                <p><strong>Legal Basis:</strong> Contract performance (communication features), Legitimate interest (service notifications).</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>2. Third-Party Data Collection</h2>
+
+            <div class="info-card">
+                <h3>2.1 AWS Amplify Services</h3>
+                <p><strong>Services Used:</strong></p>
+                <ul>
+                    <li>Authentication (Amazon Cognito)</li>
+                    <li>Database (Amazon DynamoDB)</li>
+                    <li>File Storage (Amazon S3)</li>
+                    <li>Analytics and monitoring</li>
+                </ul>
+                <p><strong>Data Shared:</strong> User account data for authentication, app usage data for analytics, file uploads for storage, error logs for monitoring.</p>
+                <p><strong>Privacy Policy:</strong> <a href="https://aws.amazon.com/privacy/" target="_blank">AWS Privacy Policy</a></p>
+            </div>
+
+            <div class="info-card">
+                <h3>2.2 Error Monitoring (Sentry)</h3>
+                <p><strong>Data Collected:</strong></p>
+                <ul>
+                    <li>App crashes and errors</li>
+                    <li>Device information and stack traces</li>
+                    <li>User actions leading to errors</li>
+                    <li>Performance metrics</li>
+                </ul>
+                <p><strong>Purpose:</strong> Bug fixing and app stability, performance monitoring.</p>
+                <p><strong>Privacy Policy:</strong> <a href="https://sentry.io/privacy/" target="_blank">Sentry Privacy Policy</a></p>
+            </div>
+        </section>
+
+        <section>
+            <h2>3. Data Processing and Storage</h2>
+
+            <h3>3.1 Data Processing Locations</h3>
+            <ul>
+                <li><strong>Primary:</strong> European Union (AWS EU regions)</li>
+                <li><strong>Backup:</strong> Global AWS regions for redundancy</li>
+                <li><strong>Analytics:</strong> Processed in accordance with service provider policies</li>
+            </ul>
+
+            <h3>3.2 Data Retention Periods</h3>
+            <ul>
+                <li><strong>Account Data:</strong> Retained while account is active + 3 years after deletion</li>
+                <li><strong>User Content:</strong> Retained until deleted by user + 1 year for backup</li>
+                <li><strong>Analytics Data:</strong> 2 years for analysis and improvement</li>
+                <li><strong>Error Logs:</strong> 90 days for debugging and support</li>
+                <li><strong>Legal Holds:</strong> Extended retention if required by law</li>
+            </ul>
+
+            <h3>3.3 Data Security Measures</h3>
+            <ul>
+                <li><strong>Encryption:</strong> Data encrypted at rest and in transit</li>
+                <li><strong>Access Controls:</strong> Role-based access with principle of least privilege</li>
+                <li><strong>Regular Audits:</strong> Security assessments and penetration testing</li>
+                <li><strong>Incident Response:</strong> 24/7 monitoring and response procedures</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>4. User Rights and Controls</h2>
+
+            <h3>4.1 Data Access and Control</h3>
+            <ul>
+                <li><strong>Profile Settings:</strong> Users can update personal information</li>
+                <li><strong>Privacy Controls:</strong> Granular privacy settings for content visibility</li>
+                <li><strong>Data Export:</strong> Request copy of personal data</li>
+                <li><strong>Account Deletion:</strong> Complete account and data removal</li>
+            </ul>
+
+            <h3>4.2 Consent Management</h3>
+            <ul>
+                <li><strong>Permission Requests:</strong> Clear explanations for required permissions</li>
+                <li><strong>Opt-out Options:</strong> Ability to disable non-essential data collection</li>
+                <li><strong>Cookie Controls:</strong> Transparency about tracking technologies</li>
+            </ul>
+
+            <h3>4.3 GDPR Rights (EU Users)</h3>
+            <ul>
+                <li><strong>Right to Access:</strong> Request information about data processing</li>
+                <li><strong>Right to Rectification:</strong> Correct inaccurate personal data</li>
+                <li><strong>Right to Erasure:</strong> Delete personal data ("right to be forgotten")</li>
+                <li><strong>Right to Restrict Processing:</strong> Limit data processing activities</li>
+                <li><strong>Right to Data Portability:</strong> Receive data in machine-readable format</li>
+                <li><strong>Right to Object:</strong> Object to data processing in certain circumstances</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>5. Children's Privacy</h2>
+
+            <h3>5.1 Age Restrictions</h3>
+            <ul>
+                <li><strong>Minimum Age:</strong> 15 years old</li>
+                <li><strong>Age Verification:</strong> Self-declaration during registration</li>
+                <li><strong>Parental Controls:</strong> App respects device parental controls</li>
+            </ul>
+
+            <h3>5.2 COPPA Compliance</h3>
+            <ul>
+                <li><strong>Not Applicable:</strong> App requires users to be 15+ years old <li><strong>Data Practices:</strong> No collection</li>
+                from children under 13</li>
+                <li><strong>Verification:</strong> Age declaration prevents underage access</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>6. Data Sharing and Disclosure</h2>
+
+            <h3>6.1 No Sale of Personal Data</h3>
+            <p>We do not sell, trade, or rent personal information to third parties for marketing purposes.</p>
+
+            <h3>6.2 Limited Sharing</h3>
+            <p>Data is only shared in the following circumstances:</p>
+            <ul>
+                <li><strong>Service Providers:</strong> With trusted partners for app functionality</li>
+                <li><strong>Legal Requirements:</strong> When required by law or court order</li>
+                <li><strong>Safety:</strong> To protect user safety and prevent harm</li>
+                <li><strong>Business Transfers:</strong> In case of company sale or merger</li>
+            </ul>
+
+            <h3>6.3 Public Content</h3>
+            <p>User-generated content posted publicly is visible to other users and may be indexed by search engines.</p>
+        </section>
+
+        <section>
+            <h2>7. International Data Transfers</h2>
+
+            <h3>7.1 Cross-Border Transfers</h3>
+            <ul>
+                <li><strong>EU-US Transfers:</strong> Comply with Privacy Shield or Standard Contractual Clauses</li>
+                <li><strong>Data Localization:</strong> Primary data storage in EU regions</li>
+                <li><strong>Transfer Mechanisms:</strong> Adequate protection for international transfers</li>
+            </ul>
+
+            <h3>7.2 Third-Party Transfers</h3>
+            <p>All third-party service providers maintain adequate data protection standards.</p>
+        </section>
+
+        <section>
+            <h2>8. Compliance & Certifications</h2>
+            
+            <div class="compliance-grid">
+                <div class="compliance-badge">
+                    <div class="icon">🇪🇺</div>
+                    <div><strong>GDPR</strong></div>
+                    <div style="font-size: 0.85rem; color: var(--text-muted);">Fully Compliant</div>
+                </div>
+                <div class="compliance-badge">
+                    <div class="icon">🇺🇸</div>
+                    <div><strong>CCPA</strong></div>
+                    <div style="font-size: 0.85rem; color: var(--text-muted);">Compliant</div>
+                </div>
+                <div class="compliance-badge">
+                    <div class="icon">🔒</div>
+                    <div><strong>COPPA</strong></div>
+                    <div style="font-size: 0.85rem; color: var(--text-muted);">Age Restricted</div>
+                </div>
+                <div class="compliance-badge">
+                    <div class="icon">☁️</div>
+                    <div><strong>AWS</strong></div>
+                    <div style="font-size: 0.85rem; color: var(--text-muted);">SOC 2, ISO 27001</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>9. Data Breach Notification</h2>
+
+            <h3>9.1 Breach Response</h3>
+            <ul>
+                <li><strong>Detection:</strong> 24/7 monitoring for security incidents</li>
+                <li><strong>Assessment:</strong> Immediate investigation of potential breaches</li>
+                <li><strong>Notification:</strong> Affected users notified within 72 hours (GDPR requirement)</li>
+                <li><strong>Regulatory Reporting:</strong> Authorities notified as required by law</li>
+            </ul>
+
+            <h3>9.2 Preventive Measures</h3>
+            <ul>
+                <li><strong>Encryption:</strong> All sensitive data encrypted</li>
+                <li><strong>Access Logging:</strong> Comprehensive audit trails</li>
+                <li><strong>Regular Testing:</strong> Penetration testing and vulnerability assessments</li>
+            </ul>
+        </section>
+
+        <div class="contact-section">
+            <h3>Contact Information</h3>
+            <p><strong>Data Protection Inquiry:</strong> christ.connects.dev@gmail.com</p>
+            <p><strong>GDPR Requests:</strong> christ.connects.dev@gmail.com (Subject: "GDPR Data Request")</p>
+            <p><strong>Response Time:</strong> Within 30 days</p>
+            <p style="margin-top: 16px;"><strong>General Support:</strong> christ.connects.dev@gmail.com</p>
+        </div>
+    </div>
+</body>
+</html>
